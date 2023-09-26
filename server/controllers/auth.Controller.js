@@ -15,7 +15,7 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
   }
 
   if (req.file) {
-    avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`;
+    avatar = `${BASE_URL}/Uploads/user/${req.file.originalname}`;
   }
   const user = await UserModel.create({
     name,
@@ -170,7 +170,7 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
   }
 
   if (req.file) {
-    avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`;
+    avatar = `${BASE_URL}/Uploads/user/${req.file.originalname}`;
     newUserData = { ...newUserData, avatar };
   }
 
