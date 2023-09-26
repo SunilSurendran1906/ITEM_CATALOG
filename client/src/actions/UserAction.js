@@ -58,7 +58,7 @@ export const register = (userData) => async (dispatch) => {
     dispatch(registerRequest());
     const config = {
       headers: {
-        "content-type": "multipart/from-data",
+        "Content-type": "multipart/from-data",
       },
     };
     const { data } = await axios.post(`/api/auth/register`, userData, config);
@@ -92,7 +92,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     dispatch(updateProfileRequest());
     const config = {
       headers: {
-        "content-type": "multipart/from-data",
+        "Content-type": "multipart/from-data",
       },
     };
     const { data } = await axios.put(`/api/auth/update`, userData, config);
@@ -144,7 +144,7 @@ export const resetPassword = (formData, token) => async (dispatch) => {
         "Content-type": "application/json",
       },
     };
-  
+
     const { data } = await axios.post(
       `/api/auth/password/reset/${token}`,
       formData,
